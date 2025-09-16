@@ -1,0 +1,115 @@
+Equipamento;Tag;Tipo;Unidade;Descricao
+Barra;ClassName;Data;;Power.PowerBusBar
+Barra;DI_BARRA_ENERGIZADA;Digital;;Barra energizada
+Barra;DI_EARTHING_SWITCH_STATUS;Digital;;Estado da chave de aterramento
+Barra;DI_BUS_PROT_TRIP;Digital;;Proteção da barra disparada
+Barra;DI_VT_SUPERVISION_FAULT;Digital;;Falha de supervisão de VT
+Barra;DI_CT_SUPERVISION_FAULT;Digital;;Falha de supervisão de CT
+Barra;DI_RTU_COMM_OK;Digital;;Comunicação RTU/IED ok
+Barra;CO_CLOSE_BUS_TIE;Command;;Fechar disjuntor de acoplamento
+Barra;CO_OPEN_BUS_TIE;Command;;Abrir disjuntor de acoplamento
+Barra;CO_CLOSE_EARTHING_SWITCH;Command;;Fechar chave de aterramento
+Barra;CO_OPEN_EARTHING_SWITCH;Command;;Abrir chave de aterramento
+Barra;CO_RESET_BUS_PROT_ALARM;Command;;Resetar alarme de proteção da barra
+Barra;ALM_BUS_UNDERVOLT;Alarm;;Subtensão na barra
+Barra;ALM_BUS_OVERVOLT;Alarm;;Sobretensão na barra
+Barra;ALM_BUS_FREQ_OUT;Alarm;;Frequência fora de faixa
+Barra;ALM_BUS_PROT_TRIP;Alarm;;Proteção da barra atuou
+Barra;ALM_BUS_COMM_FAIL;Alarm;;Falha de comunicação com RTU/IED
+Disjuntor;ClassName;Data;;Power.PowerBreaker
+Disjuntor;AI_Corrente_A;Analog;A;Corrente fase A
+Disjuntor;AI_Corrente_B;Analog;A;Corrente fase B
+Disjuntor;AI_Corrente_C;Analog;A;Corrente fase C
+Disjuntor;AI_Potencia_Ativa;Analog;kW;Potência ativa medida
+Disjuntor;AI_Potencia_Reativa;Analog;kVAr;Potência reativa medida
+Disjuntor;DI_Posicao;Digital;;Posição do disjuntor
+Disjuntor;DI_Status_Comando;Digital;;Status do último comando recebido
+Disjuntor;DI_Bloqueio;Digital;;Indicação de bloqueio do disjuntor
+Disjuntor;CMD_Abrir;Command;;Comando para abrir o disjuntor
+Disjuntor;CMD_Fechar;Command;;Comando para fechar o disjuntor
+Disjuntor;ME_Fator_Potencia;Measure;pu;Fator de potência
+Disjuntor;ME_Energia_Ativa;Measure;kWh;Energia ativa acumulada
+Disjuntor;ME_Energia_Reativa;Measure;kVArh;Energia reativa acumulada
+Disjuntor;ALM_Sobrecorrente;Alarm;;Sobrecorrente detectada
+Disjuntor;ALM_Sobretensao;Alarm;;Sobretensao detectada
+Disjuntor;ALM_Subtensao;Alarm;;Subtensao detectada
+Disjuntor;ALM_Falha_Abertura;Alarm;;Falha na tentativa de abertura
+Disjuntor;ALM_Falha_Fechamento;Alarm;;Falha na tentativa de fechamento
+Disjuntor;ALM_Bloqueio_Ativo;Alarm;;Bloqueio do disjuntor ativo
+Transformador;ClassName;Data;;Power.PowerTransformer2
+Transformador;AI_Tensao_Primaria;Analog;kV;Tensão no lado primário
+Transformador;AI_Tensao_Secundaria;Analog;kV;Tensão no lado secundário
+Transformador;AI_Corrente_Primaria;Analog;A;Corrente no lado primário
+Transformador;AI_Corrente_Secundaria;Analog;A;Corrente no lado secundário
+Transformador;AI_Temperatura_Oleo;Analog;°C;Temperatura do óleo
+Transformador;AI_Temperatura_Enrolamento;Analog;°C;Temperatura do enrolamento
+Transformador;DI_Status;Digital;;Status geral do transformador
+Transformador;DI_Bomba_Oleo;Digital;;Estado da bomba de óleo de refrigeração
+Transformador;DI_Ventilador;Digital;;Estado dos ventiladores de refrigeração
+Transformador;CMD_Ligar_Bombas;Command;;Acionamento das bombas de óleo
+Transformador;CMD_Ligar_Ventiladores;Command;;Acionamento dos ventiladores de refrigeração
+Transformador;CMD_Ajustar_Tap;Command;;Ajuste remoto do comutador de TAP
+Transformador;ME_Potencia_Ativa;Measure;kW;Potência ativa medida no secundário
+Transformador;ME_Potencia_Reativa;Measure;kVAr;Potência reativa medida no secundário
+Transformador;ME_Fator_Potencia;Measure;pu;Fator de potência no secundário
+Transformador;ALM_Sobrecarga;Alarm;;Sobrecarga detectada no transformador
+Transformador;ALM_Sobreaquecimento;Alarm;;Temperatura excessiva no óleo/enrolamento
+Transformador;ALM_Baixo_Nivel_Oleo;Alarm;;Nível de óleo abaixo do limite
+Transformador;ALM_Gas_Buchholz;Alarm;;Atuação do relé Buchholz (gases no óleo)
+Transformador;ALM_Falha_Refrigeracao;Alarm;;Falha no sistema de refrigeração
+Seccionadora;ClassName;Data;;Power.PowerSwitch
+Seccionadora;AI_Tensao_Fase_A;Analog;kV;Tensão fase A
+Seccionadora;AI_Tensao_Fase_B;Analog;kV;Tensão fase B
+Seccionadora;AI_Tensao_Fase_C;Analog;kV;Tensão fase C
+Seccionadora;DI_Posicao;Digital;;Posição da seccionadora
+Seccionadora;DI_Status_Comando;Digital;;Status do último comando recebido
+Seccionadora;CMD_Abrir;Command;;Abrir a seccionadora
+Seccionadora;CMD_Fechar;Command;;Fechar a seccionadora
+Seccionadora;ME_Tensao_Media;Measure;kV;Tensão média entre fases
+Seccionadora;ALM_Posicao_Indefinida;Alarm;;Seccionadora em posição indefinida
+Seccionadora;ALM_Falha_Comando;Alarm;;Falha na execução do comando
+Seccionadora;ALM_Sobretensao;Alarm;;Sobretensão detectada
+Rele_Protecao;ClassName;Data;;
+Rele_Protecao;AI_Corrente_Fase_A;Analog;A;Corrente fase A medida pelo relé
+Rele_Protecao;AI_Corrente_Fase_B;Analog;A;Corrente fase B medida pelo relé
+Rele_Protecao;AI_Corrente_Fase_C;Analog;A;Corrente fase C medida pelo relé
+Rele_Protecao;AI_Tensao_Fase_A;Analog;kV;Tensão fase A medida pelo relé
+Rele_Protecao;AI_Tensao_Fase_B;Analog;kV;Tensão fase B medida pelo relé
+Rele_Protecao;AI_Tensao_Fase_C;Analog;kV;Tensão fase C medida pelo relé
+Rele_Protecao;DI_Rele_Atuado;Digital;;Indicação de atuação do relé
+Rele_Protecao;DI_Falha_Comunicacao;Digital;;Falha de comunicação com o relé
+Rele_Protecao;DI_Status_Medicao;Digital;;Status das medições internas
+Rele_Protecao;CMD_Reset;Command;;Resetar atuação do relé
+Rele_Protecao;CMD_Bloquear;Command;;Bloquear atuação do relé
+Rele_Protecao;ME_Corrente_Maxima;Measure;A;Corrente máxima detectada
+Rele_Protecao;ME_Tensao_Maxima;Measure;kV;Tensão máxima detectada
+Rele_Protecao;ALM_Sobrecorrente;Alarm;;Sobrecorrente detectada pelo relé
+Rele_Protecao;ALM_Sobretensao;Alarm;;Sobretensão detectada pelo relé
+Rele_Protecao;ALM_Falta_Fase;Alarm;;Falta de fase detectada
+Rele_Protecao;ALM_Falha_Medicao;Alarm;;Falha em alguma medição do relé
+Rele_Protecao;ALM_Falha_Comunicacao;Alarm;;Falha de comunicação com o SCADA
+Gerador;ClassName;Data;;Power.Generator
+Gerador;AI_Tensao_Fase_A;Analog;kV;Tensão fase A
+Gerador;AI_Tensao_Fase_B;Analog;kV;Tensão fase B
+Gerador;AI_Tensao_Fase_C;Analog;kV;Tensão fase C
+Gerador;AI_Corrente_Fase_A;Analog;A;Corrente fase A
+Gerador;AI_Corrente_Fase_B;Analog;A;Corrente fase B
+Gerador;AI_Corrente_Fase_C;Analog;A;Corrente fase C
+Gerador;AI_Frequencia;Analog;Hz;Frequência do gerador
+Gerador;AI_Temperatura_Oleo;Analog;°C;Temperatura do óleo do gerador
+Gerador;AI_Temperatura_Enrolamento;Analog;°C;Temperatura do enrolamento
+Gerador;DI_Status_Gerador;Digital;;Estado do gerador
+Gerador;DI_Alimentacao;Digital;;Alimentação do gerador
+Gerador;DI_Falha_Comunicacao;Digital;;Falha de comunicação com SCADA
+Gerador;CMD_Ligar;Command;;Comando de partida do gerador
+Gerador;CMD_Desligar;Command;;Comando de parada do gerador
+Gerador;CMD_Reset_Alarme;Command;;Resetar alarmes do gerador
+Gerador;ME_Potencia_Ativa;Measure;kW;Potência ativa gerada
+Gerador;ME_Potencia_Reativa;Measure;kVAr;Potência reativa gerada
+Gerador;ME_Fator_Potencia;Measure;pu;Fator de potência
+Gerador;ALM_Sobrecorrente;Alarm;;Sobrecorrente detectada
+Gerador;ALM_Sobretensao;Alarm;;Sobretensão detectada
+Gerador;ALM_Subtensao;Alarm;;Subtensão detectada
+Gerador;ALM_Sobreaquecimento;Alarm;;Temperatura excessiva no gerador
+Gerador;ALM_Falha_Partida;Alarm;;Falha na partida do gerador
+Gerador;ALM_Falha_Comunicacao;Alarm;;Falha de comunicação com SCADA

@@ -1,0 +1,59 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+      - name: Run tests
+        run: |
+          if [ -d tests ]; then pytest --maxfail=1 --disable-warnings -q; fi
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install linters
+        run: |
+          pip install flake8 black
+
+      - name: Run linters
+        run: |
+          flake8 . --count --max-line-length=100 --statistics
+          black --check .
+
+  # (Opcional) Deploy job – roda só depois que testes e lint passarem
+  #deploy:
+  #  runs-on: ubuntu-latest
+  #  needs: [build-and-test, lint]
+  #  if: github.ref == 'refs/heads/main'
+
+  #  steps:
+  #    - name: Deploy placeholder
+  #      run: echo "Aqui entraria o comando de deploy pro servidor 🚀"

@@ -1,0 +1,51 @@
+[2025-09-16 10:43:59] [INFO] [motor_eventos] Iniciando cenário com 3 eventos
+[2025-09-16 10:43:59] [DEBUG] [motor_eventos] Motor iniciado em thread.
+[2025-09-16 10:43:59] [DEBUG] [motor_eventos] Executando Evento(t=2.0s, tipo=falha_linha, alvo=1, params={})
+[2025-09-16 10:43:59] [INFO] [motor_eventos] Linha <Linha 1 - 1 <-> 2 - 2.0 km> marcada como 'fora' (id=1)
+[2025-09-16 10:43:59] [DEBUG] [motor_eventos] Notificando SCADA: falha_linha {'linha_id': 1, 'origem': 1, 'destino': 2}
+[2025-09-16 10:43:59] [DEBUG] [motor_eventos] Executando Evento(t=4.0s, tipo=abertura_religador, alvo=1, params={})
+[2025-09-16 10:43:59] [INFO] [motor_eventos] Equipamento religador (id=1): fechado -> aberto (abertura_religador)
+[2025-09-16 10:43:59] [DEBUG] [motor_eventos] Notificando SCADA: estado_equipamento {'equipamento_id': 1, 'tipo': 'religador', 'estado_anterior': 'fechado', 'estado_atual': 'aberto', 'motivo': 'abertura_religador'}
+[2025-09-16 10:43:59] [DEBUG] [motor_eventos] Executando Evento(t=8.0s, tipo=transformador_saida, alvo=2, params={})
+[2025-09-16 10:43:59] [INFO] [motor_eventos] Equipamento transformador (id=2): ativo -> inativo (transformador_saida)
+[2025-09-16 10:43:59] [DEBUG] [motor_eventos] Notificando SCADA: estado_equipamento {'equipamento_id': 2, 'tipo': 'transformador', 'estado_anterior': 'ativo', 'estado_atual': 'inativo', 'motivo': 'transformador_saida'}
+[2025-09-16 10:43:59] [DEBUG] [motor_eventos] Notificando SCADA: transformador_saida {'transformador_id': 2}
+[2025-09-16 10:43:59] [INFO] [motor_eventos] Cenário finalizado.
+[2025-09-16 10:47:51] [INFO] [motor_eventos] Iniciando cenário com 3 eventos
+[2025-09-16 10:47:51] [DEBUG] [motor_eventos] Motor iniciado em thread.
+[2025-09-16 10:47:51] [DEBUG] [motor_eventos] Aguardando 1.999s para o próximo evento
+[2025-09-16 10:48:19] [INFO] [motor_eventos] Iniciando cenário com 3 eventos
+[2025-09-16 10:48:19] [DEBUG] [motor_eventos] Motor iniciado em thread.
+[2025-09-16 10:48:19] [DEBUG] [motor_eventos] Aguardando 1.999s para o próximo evento
+[2025-09-16 10:51:20] [INFO] [motor_eventos] Iniciando cenário com 3 eventos
+[2025-09-16 10:51:20] [DEBUG] [motor_eventos] Motor iniciado em thread.
+[2025-09-16 10:51:20] [DEBUG] [motor_eventos] Aguardando 1.999s para o próximo evento
+[2025-09-16 10:51:22] [DEBUG] [motor_eventos] Executando Evento(t=2.0s, tipo=falha_linha, alvo=1, params={})
+[2025-09-16 10:51:22] [INFO] [motor_eventos] Linha <Linha 1 - 1 <-> 2 - 2.0 km> marcada como 'fora' (id=1)
+[2025-09-16 10:51:22] [DEBUG] [motor_eventos] Notificando SCADA: falha_linha {'linha_id': 1, 'origem': 1, 'destino': 2}
+[2025-09-16 10:51:22] [DEBUG] [motor_eventos] Aguardando 1.998s para o próximo evento
+[2025-09-16 10:51:24] [DEBUG] [motor_eventos] Executando Evento(t=4.0s, tipo=abertura_religador, alvo=1, params={})
+[2025-09-16 10:51:24] [INFO] [motor_eventos] Equipamento religador (id=1): fechado -> aberto (abertura_religador)
+[2025-09-16 10:51:24] [DEBUG] [motor_eventos] Notificando SCADA: estado_equipamento {'equipamento_id': 1, 'tipo': 'religador', 'estado_anterior': 'fechado', 'estado_atual': 'aberto', 'motivo': 'abertura_religador'}
+[2025-09-16 10:51:24] [DEBUG] [motor_eventos] Aguardando 3.998s para o próximo evento
+[2025-09-16 10:51:28] [DEBUG] [motor_eventos] Executando Evento(t=8.0s, tipo=transformador_saida, alvo=2, params={})
+[2025-09-16 10:51:28] [INFO] [motor_eventos] Equipamento transformador (id=2): ativo -> inativo (transformador_saida)
+[2025-09-16 10:51:28] [DEBUG] [motor_eventos] Notificando SCADA: estado_equipamento {'equipamento_id': 2, 'tipo': 'transformador', 'estado_anterior': 'ativo', 'estado_atual': 'inativo', 'motivo': 'transformador_saida'}
+[2025-09-16 10:51:28] [DEBUG] [motor_eventos] Notificando SCADA: transformador_saida {'transformador_id': 2}
+[2025-09-16 10:51:28] [INFO] [motor_eventos] Cenário finalizado.
+[2025-09-16 10:52:07] [INFO] [motor_eventos] Iniciando cenário com 3 eventos
+[2025-09-16 10:52:07] [DEBUG] [motor_eventos] Motor iniciado em thread.
+[2025-09-16 10:52:07] [DEBUG] [motor_eventos] Aguardando 1.998s para o próximo evento
+[2025-09-16 10:52:09] [DEBUG] [motor_eventos] Executando Evento(t=2.0s, tipo=falha_linha, alvo=1, params={})
+[2025-09-16 10:52:09] [INFO] [motor_eventos] Linha <Linha 1 - 1 <-> 2 - 2.0 km> marcada como 'fora' (id=1)
+[2025-09-16 10:52:09] [DEBUG] [motor_eventos] Notificando SCADA: falha_linha {'linha_id': 1, 'origem': 1, 'destino': 2}
+[2025-09-16 10:52:09] [DEBUG] [motor_eventos] Aguardando 1.998s para o próximo evento
+[2025-09-16 10:52:11] [DEBUG] [motor_eventos] Executando Evento(t=4.0s, tipo=abertura_religador, alvo=1, params={})
+[2025-09-16 10:52:11] [INFO] [motor_eventos] Equipamento religador (id=1): fechado -> aberto (abertura_religador)
+[2025-09-16 10:52:11] [DEBUG] [motor_eventos] Notificando SCADA: estado_equipamento {'equipamento_id': 1, 'tipo': 'religador', 'estado_anterior': 'fechado', 'estado_atual': 'aberto', 'motivo': 'abertura_religador'}
+[2025-09-16 10:52:11] [DEBUG] [motor_eventos] Aguardando 3.998s para o próximo evento
+[2025-09-16 10:52:15] [DEBUG] [motor_eventos] Executando Evento(t=8.0s, tipo=transformador_saida, alvo=2, params={})
+[2025-09-16 10:52:15] [INFO] [motor_eventos] Equipamento transformador (id=2): ativo -> inativo (transformador_saida)
+[2025-09-16 10:52:15] [DEBUG] [motor_eventos] Notificando SCADA: estado_equipamento {'equipamento_id': 2, 'tipo': 'transformador', 'estado_anterior': 'ativo', 'estado_atual': 'inativo', 'motivo': 'transformador_saida'}
+[2025-09-16 10:52:15] [DEBUG] [motor_eventos] Notificando SCADA: transformador_saida {'transformador_id': 2}
+[2025-09-16 10:52:15] [INFO] [motor_eventos] Cenário finalizado.

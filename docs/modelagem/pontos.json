@@ -1,0 +1,992 @@
+{
+    "Barra": {
+        "Analógicos": [
+            {
+                "tag": "AI_V_A",
+                "tipo": "Analógico",
+                "unidade": "V",
+                "descricao": "Tensão fase A",
+                "deadband": 0.5,
+                "scan_rate": "1s"
+            },
+            {
+                "tag": "AI_V_B",
+                "tipo": "Analógico",
+                "unidade": "V",
+                "descricao": "Tensão fase B",
+                "deadband": 0.5,
+                "scan_rate": "1s"
+            },
+            {
+                "tag": "AI_V_C",
+                "tipo": "Analógico",
+                "unidade": "V",
+                "descricao": "Tensão fase C",
+                "deadband": 0.5,
+                "scan_rate": "1s"
+            },
+            {
+                "tag": "AI_Freq",
+                "tipo": "Analógico",
+                "unidade": "Hz",
+                "descricao": "Frequência da barra",
+                "deadband": 0.01,
+                "scan_rate": "1s"
+            },
+            {
+                "tag": "AI_I_A",
+                "tipo": "Analógico",
+                "unidade": "A",
+                "descricao": "Corrente fase A",
+                "deadband": 1,
+                "scan_rate": "1s"
+            },
+            {
+                "tag": "AI_I_B",
+                "tipo": "Analógico",
+                "unidade": "A",
+                "descricao": "Corrente fase B",
+                "deadband": 1,
+                "scan_rate": "1s"
+            },
+            {
+                "tag": "AI_I_C",
+                "tipo": "Analógico",
+                "unidade": "A",
+                "descricao": "Corrente fase C",
+                "deadband": 1,
+                "scan_rate": "1s"
+            },
+            {
+                "tag": "AI_P_Total",
+                "tipo": "Analógico",
+                "unidade": "kW",
+                "descricao": "Potência ativa total",
+                "deadband": 2,
+                "scan_rate": "1s"
+            },
+            {
+                "tag": "AI_Q_Total",
+                "tipo": "Analógico",
+                "unidade": "kVAr",
+                "descricao": "Potência reativa total",
+                "deadband": 2,
+                "scan_rate": "1s"
+            },
+            {
+                "tag": "AI_PF",
+                "tipo": "Analógico",
+                "unidade": "pu",
+                "descricao": "Fator de potência",
+                "deadband": 0.01,
+                "scan_rate": "1s"
+            },
+            {
+                "tag": "AI_Energy_Imp",
+                "tipo": "Analógico",
+                "unidade": "kWh",
+                "descricao": "Energia importada",
+                "deadband": 10,
+                "scan_rate": "60s"
+            },
+            {
+                "tag": "AI_Energy_Exp",
+                "tipo": "Analógico",
+                "unidade": "kWh",
+                "descricao": "Energia exportada",
+                "deadband": 10,
+                "scan_rate": "60s"
+            }
+        ],
+        "Discretos": [
+            {
+                "tag": "DI_BARRA_ENERGIZADA",
+                "tipo": "Discreto",
+                "descricao": "Barra energizada"
+            },
+            {
+                "tag": "DI_EARTHING_SWITCH_STATUS",
+                "tipo": "Discreto",
+                "descricao": "Estado da chave de aterramento"
+            },
+            {
+                "tag": "DI_BUS_PROT_TRIP",
+                "tipo": "Discreto",
+                "descricao": "Proteção da barra disparada"
+            },
+            {
+                "tag": "DI_VT_SUPERVISION_FAULT",
+                "tipo": "Discreto",
+                "descricao": "Falha de supervisão de VT"
+            },
+            {
+                "tag": "DI_CT_SUPERVISION_FAULT",
+                "tipo": "Discreto",
+                "descricao": "Falha de supervisão de CT"
+            },
+            {
+                "tag": "DI_RTU_COMM_OK",
+                "tipo": "Discreto",
+                "descricao": "Comunicação RTU/IED ok"
+            }
+        ],
+        "Comandos": [
+            {
+                "tag": "CO_CLOSE_BUS_TIE",
+                "tipo": "Comando",
+                "descricao": "Fechar disjuntor de acoplamento"
+            },
+            {
+                "tag": "CO_OPEN_BUS_TIE",
+                "tipo": "Comando",
+                "descricao": "Abrir disjuntor de acoplamento"
+            },
+            {
+                "tag": "CO_CLOSE_EARTHING_SWITCH",
+                "tipo": "Comando",
+                "descricao": "Fechar chave de aterramento"
+            },
+            {
+                "tag": "CO_OPEN_EARTHING_SWITCH",
+                "tipo": "Comando",
+                "descricao": "Abrir chave de aterramento"
+            },
+            {
+                "tag": "CO_RESET_BUS_PROT_ALARM",
+                "tipo": "Comando",
+                "descricao": "Resetar alarme de proteção da barra"
+            }
+        ],
+        "Medições": [
+            {
+                "tag": "M_P_Total",
+                "tipo": "Medição",
+                "unidade": "kW",
+                "descricao": "Potência ativa agregada"
+            },
+            {
+                "tag": "M_Q_Total",
+                "tipo": "Medição",
+                "unidade": "kVAr",
+                "descricao": "Potência reativa agregada"
+            },
+            {
+                "tag": "M_LoadPercent",
+                "tipo": "Medição",
+                "unidade": "%",
+                "descricao": "Carga da barra em %"
+            },
+            {
+                "tag": "M_Volt_Unbalance",
+                "tipo": "Medição",
+                "unidade": "%",
+                "descricao": "Desequilíbrio de tensão"
+            }
+        ],
+        "Alarmes": [
+            {
+                "tag": "ALM_BUS_UNDERVOLT",
+                "tipo": "Alarme",
+                "descricao": "Subtensão na barra",
+                "limite": "<0.9pu",
+                "severidade": "Alto"
+            },
+            {
+                "tag": "ALM_BUS_OVERVOLT",
+                "tipo": "Alarme",
+                "descricao": "Sobretensão na barra",
+                "limite": ">1.1pu",
+                "severidade": "Alto"
+            },
+            {
+                "tag": "ALM_BUS_FREQ_OUT",
+                "tipo": "Alarme",
+                "descricao": "Frequência fora de faixa",
+                "limite": "±0.5Hz",
+                "severidade": "Alto"
+            },
+            {
+                "tag": "ALM_BUS_PROT_TRIP",
+                "tipo": "Alarme",
+                "descricao": "Proteção da barra atuou",
+                "severidade": "Crítico"
+            },
+            {
+                "tag": "ALM_BUS_COMM_FAIL",
+                "tipo": "Alarme",
+                "descricao": "Falha de comunicação com RTU/IED",
+                "severidade": "Alto"
+            }
+        ],
+        "Dados":[
+            {
+                "ClassName": "Power.PowerBusBar"
+            }
+        ]
+    },
+    "Disjuntor": {
+        "Analogicos": [
+            {
+                "tag": "AI_Corrente_A",
+                "tipo": "Analógico",
+                "unidade": "A",
+                "descricao": "Corrente fase A",
+                "deadband": 0.5,
+                "scan_rate": "1s"
+            },
+            {
+                "tag": "AI_Corrente_B",
+                "tipo": "Analógico",
+                "unidade": "A",
+                "descricao": "Corrente fase B",
+                "deadband": 0.5,
+                "scan_rate": "1s"
+            },
+            {
+                "tag": "AI_Corrente_C",
+                "tipo": "Analógico",
+                "unidade": "A",
+                "descricao": "Corrente fase C",
+                "deadband": 0.5,
+                "scan_rate": "1s"
+            },
+            {
+                "tag": "AI_Potencia_Ativa",
+                "tipo": "Analógico",
+                "unidade": "kW",
+                "descricao": "Potência ativa medida",
+                "deadband": 1,
+                "scan_rate": "1s"
+            },
+            {
+                "tag": "AI_Potencia_Reativa",
+                "tipo": "Analógico",
+                "unidade": "kVAr",
+                "descricao": "Potência reativa medida",
+                "deadband": 1,
+                "scan_rate": "1s"
+            }
+        ],
+        "Discretos": [
+            {
+                "tag": "DI_Posicao",
+                "tipo": "Discreto",
+                "descricao": "Posição do disjuntor",
+                "estados": [
+                    "Aberto",
+                    "Fechado"
+                ]
+            },
+            {
+                "tag": "DI_Status_Comando",
+                "tipo": "Discreto",
+                "descricao": "Status do último comando recebido",
+                "estados": [
+                    "Sucesso",
+                    "Falha"
+                ]
+            },
+            {
+                "tag": "DI_Bloqueio",
+                "tipo": "Discreto",
+                "descricao": "Indicação de bloqueio do disjuntor",
+                "estados": [
+                    "Desbloqueado",
+                    "Bloqueado"
+                ]
+            }
+        ],
+        "Comandos": [
+            {
+                "tag": "CMD_Abrir",
+                "tipo": "Comando",
+                "descricao": "Comando para abrir o disjuntor",
+                "acoes": [
+                    "Executar"
+                ]
+            },
+            {
+                "tag": "CMD_Fechar",
+                "tipo": "Comando",
+                "descricao": "Comando para fechar o disjuntor",
+                "acoes": [
+                    "Executar"
+                ]
+            }
+        ],
+        "Medicoes": [
+            {
+                "tag": "ME_Fator_Potencia",
+                "tipo": "Medição",
+                "unidade": "pu",
+                "descricao": "Fator de potência"
+            },
+            {
+                "tag": "ME_Energia_Ativa",
+                "tipo": "Medição",
+                "unidade": "kWh",
+                "descricao": "Energia ativa acumulada"
+            },
+            {
+                "tag": "ME_Energia_Reativa",
+                "tipo": "Medição",
+                "unidade": "kVArh",
+                "descricao": "Energia reativa acumulada"
+            }
+        ],
+        "Alarmes": [
+            {
+                "tag": "ALM_Sobrecorrente",
+                "tipo": "Alarme",
+                "descricao": "Sobrecorrente detectada",
+                "prioridade": "Alta"
+            },
+            {
+                "tag": "ALM_Sobretensao",
+                "tipo": "Alarme",
+                "descricao": "Sobretensao detectada",
+                "prioridade": "Alta"
+            },
+            {
+                "tag": "ALM_Subtensao",
+                "tipo": "Alarme",
+                "descricao": "Subtensao detectada",
+                "prioridade": "Alta"
+            },
+            {
+                "tag": "ALM_Falha_Abertura",
+                "tipo": "Alarme",
+                "descricao": "Falha na tentativa de abertura",
+                "prioridade": "Alta"
+            },
+            {
+                "tag": "ALM_Falha_Fechamento",
+                "tipo": "Alarme",
+                "descricao": "Falha na tentativa de fechamento",
+                "prioridade": "Alta"
+            },
+            {
+                "tag": "ALM_Bloqueio_Ativo",
+                "tipo": "Alarme",
+                "descricao": "Bloqueio do disjuntor ativo",
+                "prioridade": "Média"
+            }
+        ],
+        "Dados":[
+            {
+                "ClassName": "Power.PowerBreaker"
+            }
+        ]
+    },
+    "Transformador": {
+        "Analogicos": [
+            {
+                "tag": "AI_Tensao_Primaria",
+                "tipo": "Analógico",
+                "unidade": "kV",
+                "descricao": "Tensão no lado primário",
+                "deadband": 0.2,
+                "scan_rate": "1s"
+            },
+            {
+                "tag": "AI_Tensao_Secundaria",
+                "tipo": "Analógico",
+                "unidade": "kV",
+                "descricao": "Tensão no lado secundário",
+                "deadband": 0.2,
+                "scan_rate": "1s"
+            },
+            {
+                "tag": "AI_Corrente_Primaria",
+                "tipo": "Analógico",
+                "unidade": "A",
+                "descricao": "Corrente no lado primário",
+                "deadband": 0.5,
+                "scan_rate": "1s"
+            },
+            {
+                "tag": "AI_Corrente_Secundaria",
+                "tipo": "Analógico",
+                "unidade": "A",
+                "descricao": "Corrente no lado secundário",
+                "deadband": 0.5,
+                "scan_rate": "1s"
+            },
+            {
+                "tag": "AI_Temperatura_Oleo",
+                "tipo": "Analógico",
+                "unidade": "°C",
+                "descricao": "Temperatura do óleo",
+                "deadband": 1,
+                "scan_rate": "5s"
+            },
+            {
+                "tag": "AI_Temperatura_Enrolamento",
+                "tipo": "Analógico",
+                "unidade": "°C",
+                "descricao": "Temperatura do enrolamento",
+                "deadband": 1,
+                "scan_rate": "5s"
+            }
+        ],
+        "Discretos": [
+            {
+                "tag": "DI_Status",
+                "tipo": "Discreto",
+                "descricao": "Status geral do transformador",
+                "estados": [
+                    "Desligado",
+                    "Energizado"
+                ]
+            },
+            {
+                "tag": "DI_Bomba_Oleo",
+                "tipo": "Discreto",
+                "descricao": "Estado da bomba de óleo de refrigeração",
+                "estados": [
+                    "Desligada",
+                    "Ligada"
+                ]
+            },
+            {
+                "tag": "DI_Ventilador",
+                "tipo": "Discreto",
+                "descricao": "Estado dos ventiladores de refrigeração",
+                "estados": [
+                    "Desligados",
+                    "Ligados"
+                ]
+            }
+        ],
+        "Comandos": [
+            {
+                "tag": "CMD_Ligar_Bombas",
+                "tipo": "Comando",
+                "descricao": "Acionamento das bombas de óleo",
+                "acoes": [
+                    "Ligar",
+                    "Desligar"
+                ]
+            },
+            {
+                "tag": "CMD_Ligar_Ventiladores",
+                "tipo": "Comando",
+                "descricao": "Acionamento dos ventiladores de refrigeração",
+                "acoes": [
+                    "Ligar",
+                    "Desligar"
+                ]
+            },
+            {
+                "tag": "CMD_Ajustar_Tap",
+                "tipo": "Comando",
+                "descricao": "Ajuste remoto do comutador de TAP",
+                "acoes": [
+                    "Subir",
+                    "Descer"
+                ]
+            }
+        ],
+        "Medicoes": [
+            {
+                "tag": "ME_Potencia_Ativa",
+                "tipo": "Medição",
+                "unidade": "kW",
+                "descricao": "Potência ativa medida no secundário"
+            },
+            {
+                "tag": "ME_Potencia_Reativa",
+                "tipo": "Medição",
+                "unidade": "kVAr",
+                "descricao": "Potência reativa medida no secundário"
+            },
+            {
+                "tag": "ME_Fator_Potencia",
+                "tipo": "Medição",
+                "unidade": "pu",
+                "descricao": "Fator de potência no secundário"
+            }
+        ],
+        "Alarmes": [
+            {
+                "tag": "ALM_Sobrecarga",
+                "tipo": "Alarme",
+                "descricao": "Sobrecarga detectada no transformador",
+                "prioridade": "Alta"
+            },
+            {
+                "tag": "ALM_Sobreaquecimento",
+                "tipo": "Alarme",
+                "descricao": "Temperatura excessiva no óleo/enrolamento",
+                "prioridade": "Alta"
+            },
+            {
+                "tag": "ALM_Baixo_Nivel_Oleo",
+                "tipo": "Alarme",
+                "descricao": "Nível de óleo abaixo do limite",
+                "prioridade": "Alta"
+            },
+            {
+                "tag": "ALM_Gas_Buchholz",
+                "tipo": "Alarme",
+                "descricao": "Atuação do relé Buchholz (gases no óleo)",
+                "prioridade": "Crítica"
+            },
+            {
+                "tag": "ALM_Falha_Refrigeracao",
+                "tipo": "Alarme",
+                "descricao": "Falha no sistema de refrigeração",
+                "prioridade": "Média"
+            }
+        ],
+        "Dados":[
+            {
+                "ClassName": "Power.PowerTransformer2"
+            }
+        ]
+    },
+    "Seccionadora": {
+        "Analogicos": [
+            {
+                "tag": "AI_Tensao_Fase_A",
+                "tipo": "Analógico",
+                "unidade": "kV",
+                "descricao": "Tensão fase A",
+                "deadband": 0.2,
+                "scan_rate": "1s"
+            },
+            {
+                "tag": "AI_Tensao_Fase_B",
+                "tipo": "Analógico",
+                "unidade": "kV",
+                "descricao": "Tensão fase B",
+                "deadband": 0.2,
+                "scan_rate": "1s"
+            },
+            {
+                "tag": "AI_Tensao_Fase_C",
+                "tipo": "Analógico",
+                "unidade": "kV",
+                "descricao": "Tensão fase C",
+                "deadband": 0.2,
+                "scan_rate": "1s"
+            }
+        ],
+        "Discretos": [
+            {
+                "tag": "DI_Posicao",
+                "tipo": "Discreto",
+                "descricao": "Posição da seccionadora",
+                "estados": [
+                    "Aberta",
+                    "Fechada"
+                ]
+            },
+            {
+                "tag": "DI_Status_Comando",
+                "tipo": "Discreto",
+                "descricao": "Status do último comando recebido",
+                "estados": [
+                    "Sucesso",
+                    "Falha"
+                ]
+            }
+        ],
+        "Comandos": [
+            {
+                "tag": "CMD_Abrir",
+                "tipo": "Comando",
+                "descricao": "Abrir a seccionadora",
+                "acoes": [
+                    "Executar"
+                ]
+            },
+            {
+                "tag": "CMD_Fechar",
+                "tipo": "Comando",
+                "descricao": "Fechar a seccionadora",
+                "acoes": [
+                    "Executar"
+                ]
+            }
+        ],
+        "Medicoes": [
+            {
+                "tag": "ME_Tensao_Media",
+                "tipo": "Medição",
+                "unidade": "kV",
+                "descricao": "Tensão média entre fases"
+            }
+        ],
+        "Alarmes": [
+            {
+                "tag": "ALM_Posicao_Indefinida",
+                "tipo": "Alarme",
+                "descricao": "Seccionadora em posição indefinida",
+                "prioridade": "Alta"
+            },
+            {
+                "tag": "ALM_Falha_Comando",
+                "tipo": "Alarme",
+                "descricao": "Falha na execução do comando",
+                "prioridade": "Alta"
+            },
+            {
+                "tag": "ALM_Sobretensao",
+                "tipo": "Alarme",
+                "descricao": "Sobretensão detectada",
+                "prioridade": "Média"
+            }
+        ],
+        "Dados":[
+            {
+                "ClassName": "Power.PowerSwitch"
+            }
+        ]
+    },
+    "Rele_Protecao": {
+        "Analogicos": [
+            {
+                "tag": "AI_Corrente_Fase_A",
+                "tipo": "Analógico",
+                "unidade": "A",
+                "descricao": "Corrente fase A medida pelo relé",
+                "deadband": 0.5,
+                "scan_rate": "1s"
+            },
+            {
+                "tag": "AI_Corrente_Fase_B",
+                "tipo": "Analógico",
+                "unidade": "A",
+                "descricao": "Corrente fase B medida pelo relé",
+                "deadband": 0.5,
+                "scan_rate": "1s"
+            },
+            {
+                "tag": "AI_Corrente_Fase_C",
+                "tipo": "Analógico",
+                "unidade": "A",
+                "descricao": "Corrente fase C medida pelo relé",
+                "deadband": 0.5,
+                "scan_rate": "1s"
+            },
+            {
+                "tag": "AI_Tensao_Fase_A",
+                "tipo": "Analógico",
+                "unidade": "kV",
+                "descricao": "Tensão fase A medida pelo relé",
+                "deadband": 0.2,
+                "scan_rate": "1s"
+            },
+            {
+                "tag": "AI_Tensao_Fase_B",
+                "tipo": "Analógico",
+                "unidade": "kV",
+                "descricao": "Tensão fase B medida pelo relé",
+                "deadband": 0.2,
+                "scan_rate": "1s"
+            },
+            {
+                "tag": "AI_Tensao_Fase_C",
+                "tipo": "Analógico",
+                "unidade": "kV",
+                "descricao": "Tensão fase C medida pelo relé",
+                "deadband": 0.2,
+                "scan_rate": "1s"
+            }
+        ],
+        "Discretos": [
+            {
+                "tag": "DI_Rele_Atuado",
+                "tipo": "Discreto",
+                "descricao": "Indicação de atuação do relé",
+                "estados": [
+                    "Não Atuado",
+                    "Atuado"
+                ]
+            },
+            {
+                "tag": "DI_Falha_Comunicacao",
+                "tipo": "Discreto",
+                "descricao": "Falha de comunicação com o relé",
+                "estados": [
+                    "Normal",
+                    "Falha"
+                ]
+            },
+            {
+                "tag": "DI_Status_Medicao",
+                "tipo": "Discreto",
+                "descricao": "Status das medições internas",
+                "estados": [
+                    "Normal",
+                    "Erro"
+                ]
+            }
+        ],
+        "Comandos": [
+            {
+                "tag": "CMD_Reset",
+                "tipo": "Comando",
+                "descricao": "Resetar atuação do relé",
+                "acoes": [
+                    "Executar"
+                ]
+            },
+            {
+                "tag": "CMD_Bloquear",
+                "tipo": "Comando",
+                "descricao": "Bloquear atuação do relé",
+                "acoes": [
+                    "Bloquear",
+                    "Desbloquear"
+                ]
+            }
+        ],
+        "Medicoes": [
+            {
+                "tag": "ME_Corrente_Maxima",
+                "tipo": "Medição",
+                "unidade": "A",
+                "descricao": "Corrente máxima detectada"
+            },
+            {
+                "tag": "ME_Tensao_Maxima",
+                "tipo": "Medição",
+                "unidade": "kV",
+                "descricao": "Tensão máxima detectada"
+            }
+        ],
+        "Alarmes": [
+            {
+                "tag": "ALM_Sobrecorrente",
+                "tipo": "Alarme",
+                "descricao": "Sobrecorrente detectada pelo relé",
+                "prioridade": "Alta"
+            },
+            {
+                "tag": "ALM_Sobretensao",
+                "tipo": "Alarme",
+                "descricao": "Sobretensão detectada pelo relé",
+                "prioridade": "Alta"
+            },
+            {
+                "tag": "ALM_Falta_Fase",
+                "tipo": "Alarme",
+                "descricao": "Falta de fase detectada",
+                "prioridade": "Alta"
+            },
+            {
+                "tag": "ALM_Falha_Medicao",
+                "tipo": "Alarme",
+                "descricao": "Falha em alguma medição do relé",
+                "prioridade": "Média"
+            },
+            {
+                "tag": "ALM_Falha_Comunicacao",
+                "tipo": "Alarme",
+                "descricao": "Falha de comunicação com o SCADA",
+                "prioridade": "Crítica"
+            }
+        ],
+        "Dados":[
+            {
+            }
+        ]
+    },
+    "Gerador": {
+        "Analogicos": [
+            {
+                "tag": "AI_Tensao_Fase_A",
+                "tipo": "Analógico",
+                "unidade": "kV",
+                "descricao": "Tensão fase A",
+                "deadband": 0.2,
+                "scan_rate": "1s"
+            },
+            {
+                "tag": "AI_Tensao_Fase_B",
+                "tipo": "Analógico",
+                "unidade": "kV",
+                "descricao": "Tensão fase B",
+                "deadband": 0.2,
+                "scan_rate": "1s"
+            },
+            {
+                "tag": "AI_Tensao_Fase_C",
+                "tipo": "Analógico",
+                "unidade": "kV",
+                "descricao": "Tensão fase C",
+                "deadband": 0.2,
+                "scan_rate": "1s"
+            },
+            {
+                "tag": "AI_Corrente_Fase_A",
+                "tipo": "Analógico",
+                "unidade": "A",
+                "descricao": "Corrente fase A",
+                "deadband": 0.5,
+                "scan_rate": "1s"
+            },
+            {
+                "tag": "AI_Corrente_Fase_B",
+                "tipo": "Analógico",
+                "unidade": "A",
+                "descricao": "Corrente fase B",
+                "deadband": 0.5,
+                "scan_rate": "1s"
+            },
+            {
+                "tag": "AI_Corrente_Fase_C",
+                "tipo": "Analógico",
+                "unidade": "A",
+                "descricao": "Corrente fase C",
+                "deadband": 0.5,
+                "scan_rate": "1s"
+            },
+            {
+                "tag": "AI_Frequencia",
+                "tipo": "Analógico",
+                "unidade": "Hz",
+                "descricao": "Frequência do gerador",
+                "deadband": 0.01,
+                "scan_rate": "1s"
+            },
+            {
+                "tag": "AI_Temperatura_Oleo",
+                "tipo": "Analógico",
+                "unidade": "°C",
+                "descricao": "Temperatura do óleo do gerador",
+                "deadband": 1,
+                "scan_rate": "5s"
+            },
+            {
+                "tag": "AI_Temperatura_Enrolamento",
+                "tipo": "Analógico",
+                "unidade": "°C",
+                "descricao": "Temperatura do enrolamento",
+                "deadband": 1,
+                "scan_rate": "5s"
+            }
+        ],
+        "Discretos": [
+            {
+                "tag": "DI_Status_Gerador",
+                "tipo": "Discreto",
+                "descricao": "Estado do gerador",
+                "estados": [
+                    "Desligado",
+                    "Energizado",
+                    "Em partida"
+                ]
+            },
+            {
+                "tag": "DI_Alimentacao",
+                "tipo": "Discreto",
+                "descricao": "Alimentação do gerador",
+                "estados": [
+                    "Normal",
+                    "Falha"
+                ]
+            },
+            {
+                "tag": "DI_Falha_Comunicacao",
+                "tipo": "Discreto",
+                "descricao": "Falha de comunicação com SCADA",
+                "estados": [
+                    "Normal",
+                    "Falha"
+                ]
+            }
+        ],
+        "Comandos": [
+            {
+                "tag": "CMD_Ligar",
+                "tipo": "Comando",
+                "descricao": "Comando de partida do gerador",
+                "acoes": [
+                    "Executar"
+                ]
+            },
+            {
+                "tag": "CMD_Desligar",
+                "tipo": "Comando",
+                "descricao": "Comando de parada do gerador",
+                "acoes": [
+                    "Executar"
+                ]
+            },
+            {
+                "tag": "CMD_Reset_Alarme",
+                "tipo": "Comando",
+                "descricao": "Resetar alarmes do gerador",
+                "acoes": [
+                    "Executar"
+                ]
+            }
+        ],
+        "Medicoes": [
+            {
+                "tag": "ME_Potencia_Ativa",
+                "tipo": "Medição",
+                "unidade": "kW",
+                "descricao": "Potência ativa gerada"
+            },
+            {
+                "tag": "ME_Potencia_Reativa",
+                "tipo": "Medição",
+                "unidade": "kVAr",
+                "descricao": "Potência reativa gerada"
+            },
+            {
+                "tag": "ME_Fator_Potencia",
+                "tipo": "Medição",
+                "unidade": "pu",
+                "descricao": "Fator de potência"
+            }
+        ],
+        "Alarmes": [
+            {
+                "tag": "ALM_Sobrecorrente",
+                "tipo": "Alarme",
+                "descricao": "Sobrecorrente detectada",
+                "prioridade": "Alta"
+            },
+            {
+                "tag": "ALM_Sobretensao",
+                "tipo": "Alarme",
+                "descricao": "Sobretensão detectada",
+                "prioridade": "Alta"
+            },
+            {
+                "tag": "ALM_Subtensao",
+                "tipo": "Alarme",
+                "descricao": "Subtensão detectada",
+                "prioridade": "Alta"
+            },
+            {
+                "tag": "ALM_Sobreaquecimento",
+                "tipo": "Alarme",
+                "descricao": "Temperatura excessiva no gerador",
+                "prioridade": "Alta"
+            },
+            {
+                "tag": "ALM_Falha_Partida",
+                "tipo": "Alarme",
+                "descricao": "Falha na partida do gerador",
+                "prioridade": "Alta"
+            },
+            {
+                "tag": "ALM_Falha_Comunicacao",
+                "tipo": "Alarme",
+                "descricao": "Falha de comunicação com SCADA",
+                "prioridade": "Crítica"
+            }
+        ],
+        "Dados":[
+            {
+                "ClassName": "Power.Generator"
+            }
+        ]
+    }
+}
